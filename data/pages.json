@@ -1,0 +1,23 @@
+{
+  "pages": [
+    {
+      "id": "placeholder1",
+      "title": "Placeholder Page 1",
+      "category": "Lore",
+      "image": "assets/images/placeholder1.png",
+      "lastUpdated": "2025-10-05",
+      "description": "A placeholder entry to test layout and dynamic loading.",
+      "content": "<p>This page demonstrates how page data is dynamically loaded from JSON. You can include <strong>HTML formatting</strong>, such as paragraphs, lists, or even embedded images.</p><ul><li>Dynamic content loading</li><li>Clean SPA navigation</li><li>No hardcoded HTML pages</li></ul>"
+    },
+    {
+      "id": "placeholder2",
+      "title": "Placeholder Page 2",
+      "category": "Locations",
+      "image": "assets/images/placeholder2.png",
+      "lastUpdated": "2025-10-04",
+      "description": "Another test entry for a JSON-driven world wiki.",
+      "content": "<p>This is another example page, with its content defined entirely inside <code>data/pages.json</code>.</p><p>Adding new entries is as simple as copying this structure and assigning a unique <code>id</code>.</p>"
+    }
+  ]
+}
+

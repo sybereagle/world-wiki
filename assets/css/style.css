@@ -30,32 +30,6 @@ header nav a {
   padding: 1rem;
 }
 
-.sidebar h2 {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-  color: #333;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 0.3rem;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 0.5rem 0;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-.sidebar ul li a:hover {
-  text-decoration: underline;
-}
-
 main {
   flex: 1;
   padding: 1rem;
@@ -69,7 +43,7 @@ main {
 }
 
 .card {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -81,24 +55,17 @@ main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.card h3 {
-  margin-top: 0;
+.card img {
+  width: 100%;
+  border-radius: 5px;
   margin-bottom: 0.5rem;
 }
 
-.card p {
-  margin: 0;
-}
-
-.card a {
-  display: inline-block;
+.card small {
+  display: block;
   margin-top: 0.5rem;
-  color: #007acc;
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
+  color: #666;
+  font-size: 0.85rem;
 }
 
 footer {
@@ -106,22 +73,5 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-}
-
-footer .footer-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: white;
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
