@@ -1,7 +1,17 @@
 {
   "pages": [
-    {"title": "Placeholder 1", "link": "pages/placeholder1.html"},
-    {"title": "Placeholder 2", "link": "pages/placeholder2.html"}
+    {
+      "title": "Placeholder Page 1",
+      "description": "This page contains placeholder content for testing layout.",
+      "link": "pages/placeholder1.html",
+      "category": "Lore"
+    },
+    {
+      "title": "Placeholder Page 2",
+      "description": "Another placeholder page demonstrating card layout.",
+      "link": "pages/placeholder2.html",
+      "category": "Locations"
+    }
   ]
 }
 
