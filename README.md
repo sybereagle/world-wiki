@@ -22,14 +22,11 @@ This repository serves as both a **template** and a **living documentation syste
 world-wiki/
 │
 ├── index.html              # Homepage (auto-generated cards)
-├── about.html              # About page
-├── sidebar.html            # Sidebar partial
-├── footer.html             # Footer partial
 │
-├── pages/                  # Individual wiki pages
-│   ├── placeholder1.html
-│   ├── placeholder2.html
-│   └── ...etc
+├── components/             # Components used for homepage
+│   ├── header.html         # Header partial
+│   ├── sidebar.html        # Sidebar partial
+│   └── footer.html         # Footer partial
 │
 ├── js/
 │   ├── app.js              # SPA router + card generation logic
@@ -40,7 +37,7 @@ world-wiki/
 │   └── style.css           # Global styles
 │
 ├── data/
-│   └── placeholders.json   # Metadata for dynamically generated pages
+│   └── pages.json          # Metadata for dynamically generated pages
 │
 └── README.md               # You are here!
 ```
