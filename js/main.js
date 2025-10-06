@@ -55,17 +55,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
         
         toggle.addEventListener('click', function() {
-            if (sidebar.classList.contains('visible')) {
-                closeSidebar();
-            } else {
-                openSidebar();
+            if (window.innerWidth <= 900) {
+                if (sidebar.classList.contains('visible')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                };
             }
         });
         
         // Close sidebar if overlay is clicked
-        if (overlay) {
-            overlay.addEventListener('click', closeSidebar);
-        };
+        overlay.addEventListener('click', closeSidebar);
         
         // Close sidebar when navigating a link
         sidebar.addEventListener('click', function(e) {
