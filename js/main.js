@@ -45,12 +45,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const openSidebar = function() {
             sidebar.classList.add('visible');
             overlay.classList.add('active');
+            toggle.classList.add('active'); // rotates and moves toggle
             toggle.textContent = '✕'; // change to close icon
         };
         
         const closeSidebar = function() {
             sidebar.classList.remove('visible');
             overlay.classList.remove('active');
+            toggle.classList.remove('active'); // reset toggle
             toggle.textContent = '☰'; // change to hamburger icon
         };
         

@@ -31,9 +31,9 @@
 
 /* Toggle button */
 #sidebar-toggle {
-  position: absolute; /* desktop header position */
+  position: absolute;
   top: 0.75rem;
-  right: 1rem;
+  right: 1rem; /* default desktop / mobile collapsed position */
   z-index: 1001;
   background: var(--color-surface-alt);
   border: 1px solid rgba(0,0,0,0.15);
@@ -44,26 +44,28 @@
   transition: all 0.3s ease;
 }
 
-/* Toggle animation: rotates 90deg when active */
+/* Toggle rotates and highlights when active */
 #sidebar-toggle.active {
   transform: rotate(90deg);
   background: rgba(0, 150, 250, 0.1);
   border-color: rgba(0, 150, 250, 0.6);
 }
 
-/* Toggle hover */
-#sidebar-toggle:hover {
-  background: rgba(0,0,0,0.05);
-}
-
-/* Mobile */
+/* Mobile-specific */
 @media (max-width: 900px) {
+  /* Toggle in top-right header when sidebar closed */
   #sidebar-toggle {
     position: fixed;
     top: 1rem;
-    right: calc(260px + 0.5rem); /* just to the left of sidebar */
+    right: 1rem;
   }
 
+  /* Toggle moves left of sidebar when sidebar is open */
+  #sidebar-toggle.active {
+    right: calc(260px + 0.5rem); /* just left of sidebar */
+  }
+
+  /* Sidebar slides in from right */
   #sidebar {
     position: fixed;
     top: 0;
@@ -83,3 +85,4 @@
     opacity: 1;
   }
 }
+
