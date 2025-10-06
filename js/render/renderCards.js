@@ -1,5 +1,6 @@
 export function renderCards(pages, container) {
-  container.innerHTML = '';
+  container.innerHTML = ''; // clear old content
+
   const grid = document.createElement('div');
   grid.className = 'card-grid';
 
@@ -7,11 +8,14 @@ export function renderCards(pages, container) {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <img src="${page.img}" alt="${page.title}">
+      <img src="${page.img}" alt="${page.title}" class="card-img">
       <h3>${page.title}</h3>
       <p>${page.desc}</p>
     `;
-    card.addEventListener('click', () => window.location.hash = `#${page.id}`);
+    card.addEventListener('click', () => {
+      window.location.hash = `#${page.id}`;
+    });
+
     grid.appendChild(card);
   });
 

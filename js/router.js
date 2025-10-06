@@ -1,15 +1,20 @@
+import { renderCards } from './render/renderCards.js';
+import { renderPage } from './render/renderPage.js';
+
 export function initRouter(pages, mainContainer) {
-  function route() {
-    const hash = window.location.hash.substring(1);
+  function handleRoute() {
+    const hash = window.location.hash.slice(1); // remove #
     const page = pages.find(p => p.id === hash);
 
-    if (!hash) {
-      import('./renderCards.js').then(module => module.renderCards(pages, mainContainer));
+    if (page) {
+      renderPage(page, mainContainer);
     } else {
-      import('./renderPage.js').then(module => module.renderPage(page, mainContainer));
+      // Default: show all pages as cards
+      renderCards(pages, mainContainer);
     }
   }
 
-  window.addEventListener('hashchange', route);
-  window.addEventListener('load', route);
+  // Listen for hash changes and run once on load
+  window.addEventListener('hashchange', handleRoute);
+  handleRoute();
 }
