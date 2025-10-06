@@ -25,31 +25,51 @@ if (params.get('debug') === 'true') {
 // ---------------------------------------------------------
 window.addEventListener('DOMContentLoaded', async () => {
   const mainContainer = document.getElementById('content');
+  const toggle = document.getElementById('sidebar-toggle');
   const sidebar = document.getElementById('sidebar');
   const searchInput = document.getElementById('searchBar');
+  const overlay = document.getElementById('overlay');
 
   if (!mainContainer) {
     console.error('No <main id="content"> found in DOM');
     return;
   }
-
-  // ✅ 1. Load Data
+  
+  // 1. Load Data
   const pages = await loadPlaceholders();
 
-  // ✅ 2. Debug mode exposure
+  // Debug mode for console
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('debug') === 'true') {
     window.pages = pages;
     console.log('Debug mode: window.pages is available', pages);
   }
 
-  // ✅ 3. Render Sidebar
+  // 2. Render sidebar & SPA
   renderSidebar(pages, sidebar);
-
-  // ✅ 4. Initialize Router
   initRouter(pages, mainContainer);
   
-    // Search bar logic
+  // 3. Sidebar toggle for mobile
+  if (toggle && sidebar) {
+    toggle.addEventListener('click', () => {
+      sidebar.classList.toggle('visible');
+      overlay.classList.toggle('active');
+    });
+  }
+  
+  // close sidebar when clicking outside
+  document.addEventListener('click', (e) => {
+    if (
+      sidebar.classList.contains('visible') &&
+      !sidebar.contains(e.target) &&
+      e.target !== toggle
+    ) {
+      sidebar.classList.remove('visible');
+      overlay.classList.remove('active');
+    }
+  });
+  
+  // Search bar logic
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim();
     if (query === '') {
@@ -59,7 +79,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
   });
   
-    // Sidebar tag filtering
+  // Sidebar tag filtering
   sidebar.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI' && e.target.dataset.tags) {
       const tags = e.target.dataset.tags.split(',');
