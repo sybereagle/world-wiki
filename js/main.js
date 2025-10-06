@@ -1,6 +1,7 @@
-import { loadData } from './api/dataLoader.js';
-import { renderSidebar } from './render/renderSidebar.js';
+// js/main.js
+import { loadPlaceholders } from './api/dataLoader.js';
 import { initRouter } from './router.js';
+import { renderSidebar } from './render/renderSidebar.js';
 import { renderSearch } from './render/renderSearch.js';
 
 // ---------------------------------------------------------
@@ -22,28 +23,33 @@ if (params.get('debug') === 'true') {
 // ---------------------------------------------------------
 // 🧱 App Initialization
 // ---------------------------------------------------------
-const mainContainer = document.getElementById('content');
-const sidebarContainer = document.getElementById('sidebar');
-const searchInput = document.getElementById('searchBar');
+window.addEventListener('DOMContentLoaded', async () => {
+  const mainContainer = document.getElementById('content');
+  const sidebar = document.getElementById('sidebar');
+  const searchInput = document.getElementById('searchBar');
 
-(async function init() {
-  const pages = await loadData();
-
-  // 👇 Ensure global access if debug is active
-  if (DEBUG) {
-    window.placeholders = pages;  // visible in console
-    window.pages = pages;         // optional alias for convenience
-
-    console.log(
-      '%c[Wiki Debug Mode] Global variables "placeholders" and "pages" are available.',
-      'color: limegreen; font-weight: bold;'
-    );
+  if (!mainContainer) {
+    console.error('No <main id="content"> found in DOM');
+    return;
   }
 
-  renderSidebar(pages, sidebarContainer);
-  initRouter(pages, mainContainer);
+  // ✅ 1. Load Data
+  const pages = await loadPlaceholders();
 
-  // Search bar logic
+  // ✅ 2. Debug mode exposure
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('debug') === 'true') {
+    window.pages = pages;
+    console.log('Debug mode: window.pages is available', pages);
+  }
+
+  // ✅ 3. Render Sidebar
+  renderSidebar(pages, sidebar);
+
+  // ✅ 4. Initialize Router
+  initRouter(pages, mainContainer);
+  
+    // Search bar logic
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim();
     if (query === '') {
@@ -52,8 +58,8 @@ const searchInput = document.getElementById('searchBar');
       renderSearch(pages, query, mainContainer);
     }
   });
-
-  // Sidebar tag filtering
+  
+    // Sidebar tag filtering
   sidebarContainer.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI' && e.target.dataset.tags) {
       const tags = e.target.dataset.tags.split(',');
@@ -63,5 +69,4 @@ const searchInput = document.getElementById('searchBar');
       );
     }
   });
-})();
-
+});

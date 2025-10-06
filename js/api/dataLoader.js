@@ -1,12 +1,12 @@
-export async function loadData() {
+// js/api/dataLoader.js
+export async function loadPlaceholders() {
   try {
-    const response = await fetch('data/placeholders.json');
-    if (!response.ok) throw new Error('Failed to fetch JSON');
-    const data = await response.json();
-    return data;
+    const res = await fetch('./data/placeholders.json');
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+    const json = await res.json();
+    return json.pages || json; // support either {pages: []} or [] root
   } catch (err) {
-    console.error('Error loading data:', err);
+    console.error('Error loading placeholders:', err);
     return [];
   }
 }
-
