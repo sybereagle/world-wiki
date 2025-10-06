@@ -1,10 +1,13 @@
 #sidebar {
-  width: 250px;           /* default width on desktop */
+  width: var(--sidebar-width);
+  background-color: var(--primary-color);
+  color: #fff;
+  overflow-y: auto;
   transition: width 0.3s ease;
 }
 
-#sidebar.hidden {
-  width: 0;           /* width when toggle button clicked */
+#sidebar.collapsed {
+  width: 0;
 }
 
 #sidebar ul {
