@@ -5,7 +5,9 @@ import { initRouter } from './router.js';
 import { renderSearch } from './render/renderSearch.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
+  const toggle = document.getElementById('sidebar-toggle');
   const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
   const contentEl = document.getElementById('content');
 
   // Load page data
@@ -39,11 +41,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Sidebar toggle for mobile
-  const toggle = document.getElementById('sidebar-toggle');
   if (toggle && sidebar) {
-    toggle.addEventListener('click', () => {
-      sidebar.classList.toggle('visible');
+        const openSidebar = function() {
+            sidebar.classList.add('visible');
+            overlay.classList.add('active');
+            toggle.textContent = '✕'; // change to close icon
+        };
+        
+        const closeSidebar = function() {
+            sidebar.classList.remove('visible');
+            overlay.classList.remove('active');
+            toggle.textContent = '☰'; // change to hamburger icon
+        };
+        
+        toggle.addEventListener('click', function() {
+            if (sidebar.classList.contains('visible')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+    };
+    
+    // Close sidebar if overlay is clicked
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    };
+    
+    // Close sidebar when navigating a link
+    sidebar.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+            closeSidebar();
+        }
     });
-  }
+    
+  };
 });
 
