@@ -64,6 +64,31 @@
 
 /* Sidebar slide-in for mobile */
 @media (max-width: 900px) {
+  /* Show and position toggle button */
+  #sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: var(--color-surface-alt);
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.3s ease;
+  }
+  
+  #sidebar-toggle:hover {
+    background: rgba(0,0,0,0.05);
+  }
+  
+  /* When sidebar is open, shift button right slightly */
+  #sidebar.visible ~ #sidebar-toggle {
+    transform: translateX(260px);
+  }
+  
   #sidebar {
     position: fixed;
     top: 0;
