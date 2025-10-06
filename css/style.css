@@ -1,26 +1,17 @@
-/* css/style.css */
-@import url('variables.css');
-@import url('layout.css');
-@import url('sidebar.css');
-@import url('cards.css');
-@import url('search.css');
-@import url('utilities.css');
+/* Import all modular CSS */
+@import url("variables.css");
+@import url("layout.css");
+@import url("sidebar.css");
+@import url("cards.css");
+@import url("search.css");
+@import url("utilities.css");
 
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
-}
-
+/* Any global overrides */
 a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
+  color: var(--accent-color);
 }
+
 a:hover {
-  color: var(--accent-hover);
+  text-decoration: underline;
 }
 

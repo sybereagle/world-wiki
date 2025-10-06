@@ -1,28 +1,12 @@
 :root {
-  /* Color palette */
-  --bg: #0f1115;
-  --bg-alt: #16181d;
-  --text: #e0e0e3;
-  --text-muted: #a3a3a6;
-  --accent: #5cc9f5;
-  --accent-hover: #82dcff;
-  --border: #2a2c33;
-  --card-bg: #1a1c21;
-  --tag-bg: #272a31;
-
-  /* Typography */
-  --fs-base: 16px;
-  --fs-sm: 0.875rem;
-  --fs-lg: 1.125rem;
-  --fw-regular: 400;
-  --fw-bold: 600;
-
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 2rem;
-  --radius: 0.5rem;
-  --transition: 0.25s ease;
+  --primary-color: #4a90e2;
+  --secondary-color: #f5f5f5;
+  --accent-color: #f39c12;
+  --text-color: #333;
+  --background-color: #fff;
+  --sidebar-width: 250px;
+  --card-width: 300px;
+  --card-padding: 1rem;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
