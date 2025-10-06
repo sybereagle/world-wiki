@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sidebar = document.getElementById("sidebar");
   if (sidebarToggleBtn && sidebar) {
       sidebarToggleBtn.addEventListener("click", () => {
-          sidebar.classList.toggle("expanded");
+          sidebar.classList.toggle("hidden");
       });
   }
 

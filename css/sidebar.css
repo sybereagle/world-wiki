@@ -3,8 +3,8 @@
   transition: width 0.3s ease;
 }
 
-#sidebar.expanded {
-  width: 200px;           /* width when toggle button clicked on mobile */
+#sidebar.hidden {
+  width: 0;           /* width when toggle button clicked */
 }
 
 #sidebar ul {
