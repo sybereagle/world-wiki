@@ -85,5 +85,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 closeSidebar();
             };
         });
+        
+        // --- Handle window resizing ---
+        const handleResize = function() {
+            if (window.innerWidth > 900) {
+                overlay.classList.remove('active');
+                sidebar.classList.remove('visible');
+                toggle.classList.remove('active');
+                toggle.textContent = '☰';
+            } else {
+                sidebar.classList.remove('hidden'); // ensure it's visible baseline for mobile
+            };
+        };
+        
+        window.addEventListener('resize', handleResize);
     };
 });

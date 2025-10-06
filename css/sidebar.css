@@ -9,7 +9,7 @@
   border-left: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--radius);
   overflow-y: auto;
-  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
   z-index: 1000; /* above overlay */
 }
 
@@ -67,18 +67,19 @@
   border-color: rgba(0, 150, 250, 0.6);
 }
 
-/* Mobile-specific */
+/* === MOBILE === */
 @media (max-width: 900px) {
   /* Toggle in top-right header when sidebar closed */
   #sidebar-toggle {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    z-index: 1001;
   }
 
   /* Toggle moves left of sidebar when sidebar is open */
   #sidebar-toggle.active {
-    right: calc(260px + 0.5rem); /* just left of sidebar */
+    right: calc(260px + 1rem); /* just left of sidebar */
   }
 
   /* Sidebar slides in from right */
@@ -102,3 +103,44 @@
   }
 }
 
+/* === DESKTOP: docked right === */
+@media (min-width: 901px) {
+  #main-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #content {
+    flex: 1;
+  }
+
+  #sidebar {
+    position: relative;
+    right: 0;
+    transform: translateX(0);
+  }
+
+  #sidebar.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  #sidebar-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1001;
+    background: var(--color-surface-alt);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  #sidebar-toggle.desktop-active {
+    transform: rotate(180deg);
+  }
+}
