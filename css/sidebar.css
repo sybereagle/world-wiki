@@ -31,7 +31,7 @@
   display: none; /* desktop hidden by default */
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
   z-index: 1001;
   background: var(--color-surface-alt);
   border: 1px solid rgba(0,0,0,0.15);
@@ -93,7 +93,8 @@
   #sidebar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: auto;
+    right: 0;
     width: 260px;
     max-width: 80%;
     height: 100vh;
