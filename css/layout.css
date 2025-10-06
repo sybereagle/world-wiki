@@ -9,19 +9,33 @@
 
 #sidebar, #content {
   height: auto;        /* let them grow naturally */
-  flex: 1 1 auto;      /* if flexbox is used */
   align-self: stretch; /* stretch to match content in grid layouts */
 }
 
 #sidebar {
-  width: 220px;
+  flex: 0 0 280px; /* fixed width */
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
   background: #fafafa;
   border-right: 1px solid #ddd;
   padding: 1rem;
+  overflow-x: hidden;
   overflow-y: auto;
+  word-wrap: break-word;
 }
 
-#content { padding: 1rem; }
+#sidebar * {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+#content {
+  flex: 1;
+  padding: 1rem;
+  min-width: 0; /* ✨ required for text truncation and proper flex behavior */
+}
 
 @media (max-width: 768px) {
   #main-container {
