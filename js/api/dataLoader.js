@@ -1,6 +1,6 @@
 let cachedData = null;
 
-export async function loadData(url = "data/placeholders.json") {
+export async function loadData(url = "data/pages.json") {
   if (cachedData) return cachedData;
   try {
     const res = await fetch(url);
