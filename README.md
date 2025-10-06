@@ -20,26 +20,31 @@ This repository serves as both a **template** and a **living documentation syste
 
 ```plaintext
 world-wiki/
-│
-├── index.html              # Homepage (auto-generated cards)
-│
-├── components/             # Components used for homepage
-│   ├── header.html         # Header partial
-│   ├── sidebar.html        # Sidebar partial
-│   └── footer.html         # Footer partial
-│
-├── js/
-│   ├── app.js              # SPA router + card generation logic
-│   ├── sidebar.js          # Sidebar rendering script
-│   ├── footer.js           # Footer rendering script
-│
-├── css/
-│   └── style.css           # Global styles
-│
+├── index.html                      # Main entry point (single-page app)
+├── assets/
+│   ├── css/
+│   │   └── styles.css              # Global styling
+│   ├── js/
+│   │   ├── main.js                 # SPA entry point – loads data and initializes modules
+│   │   ├── loadComponents.js       # Loads HTML fragments (header, sidebar, footer)
+│   │   ├── navigation.js           # Controls hash-based routing
+│   │   ├── searchAndFilter.js      # Handles search and tag filtering
+│   │   ├── render/
+│   │   │   ├── renderHomepage.js   # Renders homepage cards grid
+│   │   │   ├── renderPage.js       # Renders a single page view
+│   │   │   ├── renderSidebar.js    # Builds sidebar with expandable categories
+│   │   │   └── renderTags.js       # Builds tag filter buttons
+│   │   └── utils/
+│   │       └── domUtils.js         # Optional helper functions (e.g., element creation)
+│   └── images/
+│       └── placeholder1.png        # Example assets
+├── components/
+│   ├── header.html
+│   ├── sidebar.html
+│   └── footer.html
 ├── data/
-│   └── pages.json          # Metadata for dynamically generated pages
-│
-└── README.md               # You are here!
+│   └── pages.json                  # Core world data (fully JSON-driven)
+└── README.md                       # Documentation and usage guide
 ```
 
 ## 🚀 Setup & Usage
