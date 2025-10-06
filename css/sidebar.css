@@ -13,6 +13,22 @@
   z-index: 1000; /* above overlay */
 }
 
+/* Desktop sidebar collapsed */
+#sidebar.collapsed {
+  width: 60px;  /* small mini nav */
+  padding: 1rem 0.5rem;
+}
+
+#sidebar.collapsed .sidebar-links a {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+/* Toggle rotation for collapsed state */
+#sidebar-toggle.desktop-active {
+  transform: rotate(180deg);
+}
+
 /* Overlay */
 #overlay {
   display: none;

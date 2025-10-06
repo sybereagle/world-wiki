@@ -56,18 +56,28 @@ document.addEventListener('DOMContentLoaded', async () => {
             toggle.textContent = '☰'; // change to hamburger icon
         };
         
-        toggle.addEventListener('click', function() {
+        const toggleSidebar = function() {
             if (window.innerWidth <= 900) {
+                // 🟢 Mobile behavior
                 if (sidebar.classList.contains('visible')) {
-                    closeSidebar();
+                   closeSidebar();
                 } else {
                     openSidebar();
-                };
+                }
+            } else {
+                // 🟦 Desktop behavior
+                sidebar.classList.toggle('collapsed');
+                toggle.classList.toggle('desktop-active');
             }
-        });
+        };
+        
+        // Single unified event listener
+        toggle.addEventListener('click', toggleSidebar);
         
         // Close sidebar if overlay is clicked
-        overlay.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', function() {
+            if (window.innerWidth <= 900) closeSidebar();
+        });
         
         // Close sidebar when navigating a link
         sidebar.addEventListener('click', function(e) {
