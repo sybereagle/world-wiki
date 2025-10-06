@@ -67,13 +67,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (overlay) {
         overlay.addEventListener('click', closeSidebar);
     };
-    
+
     // Close sidebar when navigating a link
     sidebar.addEventListener('click', function(e) {
         if (e.target.tagName === 'A' && window.innerWidth <= 900) {
             closeSidebar();
         }
     });
-  });
-}
-
+});
