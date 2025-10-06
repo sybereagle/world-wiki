@@ -13,12 +13,23 @@ const searchInput = document.getElementById('searchBar');
   renderSidebar(pages, sidebarContainer);
   initRouter(pages, mainContainer);
 
+  // Search by input
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim();
     if (query === '') {
-      window.location.hash = ''; // reset to homepage
+      window.location.hash = '';
     } else {
       renderSearch(pages, query, mainContainer);
     }
   });
+
+  // Optional: click tag filtering from sidebar
+  sidebarContainer.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI' && e.target.dataset.tags) {
+      const tags = e.target.dataset.tags.split(',');
+      const filtered = pages.filter(p => p.tags.some(t => tags.includes(t)));
+      import('./render/renderCards.js').then(module => module.renderCards(filtered, mainContainer));
+    }
+  });
 })();
+

@@ -1,0 +1,29 @@
+#main-container {
+  display: flex;
+  min-height: calc(100vh - 120px);
+}
+
+#sidebar {
+  width: 220px;
+  background: #fafafa;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+#content {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  #main-container {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
