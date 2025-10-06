@@ -1,0 +1,16 @@
+[
+  {
+    "id": "page-1",
+    "title": "Placeholder Page 1",
+    "desc": "This is a placeholder description for page 1.",
+    "tags": ["lore", "geography"],
+    "img": "assets/images/placeholder.png"
+  },
+  {
+    "id": "page-2",
+    "title": "Placeholder Page 2",
+    "desc": "This is a placeholder description for page 2.",
+    "tags": ["history", "characters"],
+    "img": "assets/images/placeholder.png"
+  }
+]
