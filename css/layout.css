@@ -1,6 +1,16 @@
 #main-container {
   display: flex;
-  min-height: calc(100vh - 120px);
+  align-items: flex-start; /* don’t stretch shorter columns */
+  width: 100%;
+  height: auto;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+#sidebar, #content {
+  height: auto;        /* let them grow naturally */
+  flex: 1 1 auto;      /* if flexbox is used */
+  align-self: stretch; /* stretch to match content in grid layouts */
 }
 
 #sidebar {
@@ -11,10 +21,7 @@
   overflow-y: auto;
 }
 
-#content {
-  flex: 1;
-  padding: 1rem;
-}
+#content { padding: 1rem; }
 
 @media (max-width: 768px) {
   #main-container {
