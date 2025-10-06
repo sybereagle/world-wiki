@@ -61,17 +61,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 openSidebar();
             }
         });
+        
+        // Close sidebar if overlay is clicked
+        if (overlay) {
+            overlay.addEventListener('click', closeSidebar);
+        };
+        
+        // Close sidebar when navigating a link
+        sidebar.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+                closeSidebar();
+            };
+        });
     };
-    
-    // Close sidebar if overlay is clicked
-    if (overlay) {
-        overlay.addEventListener('click', closeSidebar);
-    };
-
-    // Close sidebar when navigating a link
-    sidebar.addEventListener('click', function(e) {
-        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
-            closeSidebar();
-        }
-    });
 });
