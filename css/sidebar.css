@@ -1,0 +1,31 @@
+#sidebar {
+  grid-area: sidebar;
+  background: var(--bg-alt);
+  border-right: 1px solid var(--border);
+  padding: var(--space-md);
+  overflow-y: auto;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar li {
+  margin-bottom: var(--space-sm);
+}
+
+#sidebar a {
+  display: block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  transition: background var(--transition);
+}
+
+#sidebar a:hover,
+#sidebar a.active {
+  background: var(--card-bg);
+  color: var(--accent-hover);
+}
+

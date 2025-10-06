@@ -4,19 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Wiki</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Master CSS that imports all modular styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Optional Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
 </head>
 <body>
-  <div id="header"></div>
-  <div class="container">
-    <div id="sidebar"></div>
+  <!-- Sidebar -->
+  <aside id="sidebar">
+    <div id="sidebar-pages"></div>
+    <div id="tag-filter-container"></div>
+  </aside>
+
+  <!-- Main content wrapper -->
+  <div id="content-wrapper">
+    <!-- Header -->
+    <header id="header">
+      <h1>World Wiki</h1>
+      <input type="text" id="search-bar" placeholder="Search pages or tags..." />
+    </header>
+
+    <!-- Main content -->
     <main id="main-content">
-      <h2>Welcome to the World Wiki!</h2>
-      <p>Explore all pages below.</p>
-      <div id="cards-container" class="cards-container"></div>
+      <!-- SPA content loads dynamically here -->
     </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>© 2025 World Wiki • Built with love</p>
+    </footer>
   </div>
-  <div id="footer"></div>
-  <script type="module" src="assets/js/main.js"></script>
+
+  <!-- Master JS module -->
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
+

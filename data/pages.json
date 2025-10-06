@@ -2,23 +2,25 @@
   "pages": [
     {
       "id": "placeholder1",
-      "title": "Placeholder Page 1",
-      "category": "Lore",
-      "tags": ["history", "magic", "introduction"],
+      "title": "Placeholder 1",
+      "description": "This is a placeholder page to test homepage cards and sidebar navigation.",
+      "content": "<p>Lorem ipsum dolor sit amet...</p>",
+      "tags": ["world", "test", "lore"],
+      "category": "Examples",
       "image": "assets/images/placeholder1.png",
-      "lastUpdated": "2025-10-05",
-      "description": "A placeholder entry to test layout and dynamic loading.",
-      "content": "<p>This page demonstrates how page data is dynamically loaded from JSON. You can include <strong>HTML formatting</strong>, such as paragraphs, lists, or even embedded images.</p>"
+      "placeholderUrl": "https://via.placeholder.com/300x200?text=Placeholder+1",
+      "lastUpdated": "2025-10-05"
     },
     {
       "id": "placeholder2",
-      "title": "Placeholder Page 2",
-      "category": "Locations",
-      "tags": ["map", "region"],
+      "title": "Placeholder 2",
+      "description": "Another placeholder page with sample content for SPA testing.",
+      "content": "<p>Curabitur ac leo nunc...</p>",
+      "tags": ["test", "characters"],
+      "category": "Examples",
       "image": "assets/images/placeholder2.png",
-      "lastUpdated": "2025-10-04",
-      "description": "Another test entry for a JSON-driven world wiki.",
-      "content": "<p>This is another example page, with its content defined entirely inside <code>data/pages.json</code>.</p>"
+      "placeholderUrl": "https://via.placeholder.com/300x200?text=Placeholder+2",
+      "lastUpdated": "2025-10-04"
     }
   ]
 }
