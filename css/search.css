@@ -1,0 +1,20 @@
+#sidebar-search {
+  margin-bottom: 1rem;
+}
+
+#sidebar-search input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#sidebar-search input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(92, 107, 192, 0.2);
+}
+

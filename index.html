@@ -10,12 +10,21 @@
 <body>
   <header>
     <h1>World Wiki</h1>
-    <input id="searchBar" type="text" placeholder="Search...">
   </header>
 
   <div id="main-container">
     <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-    <aside id="sidebar"></aside>
+    <aside id="sidebar">
+    <!-- Search Field -->
+    <div id="sidebar-search">
+      <input
+        id="searchBar"
+        type="text"
+        placeholder="Search..."
+        aria-label="Search pages"
+      >
+    </div>
+    </aside>
     <div id="overlay"></div>
     <main id="content"></main>
   </div>
