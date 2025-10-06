@@ -20,34 +20,35 @@ This repository serves as both a **template** and a **living documentation syste
 
 ```plaintext
 world-wiki/
-├── index.html                # Homepage (SPA entry point)
+├── index.html                    # Homepage (SPA entry point)
 ├── data/
-│   └── placeholders.json     # Page metadata (title, desc, tags, img, etc.)
+│   └── placeholders.json         # Page metadata (title, desc, tags, img, etc.)
 ├── css/
-│   ├── style.css             # Root stylesheet (imports all others)
-│   ├── variables.css         # Color palette, typography, spacing scales
-│   ├── layout.css            # Global layout: header, footer, main grid
-│   ├── sidebar.css           # Sidebar + navigation styles
-│   ├── cards.css             # Homepage cards & responsive grid
-│   ├── search.css            # Search bar, tag filters, and result list
-│   └── utilities.css         # Helper classes (shadows, spacing, text truncation)
+│   ├── style.css                 # Root stylesheet (imports all others)
+│   ├── variables.css             # Color palette, typography, spacing scales
+│   ├── layout.css                # Global layout: header, footer, main grid
+│   ├── sidebar.css               # Sidebar + navigation styles
+│   ├── cards.css                 # Homepage cards & responsive grid
+│   ├── search.css                # Search bar, tag filters, and result list
+│   └── utilities.css             # Helper classes (shadows, spacing, text truncation)
 ├── js/
-│   ├── main.js               # Initializes the SPA and handles routing
+│   ├── main.js                   # Initializes the SPA and handles routing
 │   ├── api/
-│   │   └── dataLoader.js     # Handles fetching and caching JSON data
+│   │   └── dataLoader.js         # Handles fetching and caching JSON data
 │   ├── render/
-│   │   ├── renderCards.js    # Renders homepage cards
-│   │   ├── renderSidebar.js  # Renders sidebar navigation
-│   │   ├── renderPage.js     # Loads individual page content dynamically
-│   │   └── renderSearch.js   # Handles search and filtering results
+│   │   ├── renderCards.js        # Renders homepage cards
+│   │   ├── renderSidebar.js      # Renders sidebar navigation
+│   │   ├── renderSearchField.js  # Renders searchbar navigation
+│   │   ├── renderPage.js         # Loads individual page content dynamically
+│   │   └── renderSearch.js       # Handles search and filtering results
 │   ├── utils/
-│   │   ├── domUtils.js       # Simplifies DOM creation, updates, and queries
-│   │   └── formatUtils.js    # For formatting dates, text truncation, etc.
-│   └── router.js             # Simple client-side SPA router
+│   │   ├── domUtils.js           # Simplifies DOM creation, updates, and queries
+│   │   └── formatUtils.js        # For formatting dates, text truncation, etc.
+│   └── router.js                 # Simple client-side SPA router
 ├── assets/
-|   ├── images/               # Optional card or page images
-|   └── icons/                # Sidebar and UI icons
-└── README.md                 # Documentation and usage guide
+|   ├── images/                   # Optional card or page images
+|   └── icons/                    # Sidebar and UI icons
+└── README.md                     # Documentation and usage guide
 ```
 
 ## 🚀 Setup & Usage
