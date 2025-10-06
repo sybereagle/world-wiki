@@ -1,24 +1,53 @@
+/* Header layout */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1002; /* above sidebar */
+}
+
+#header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Main container: content + sidebar */
 #main-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* don’t stretch shorter columns */
-  width: 100%;
-  height: auto;
-  gap: var(--gap);
-  padding: 1.5rem;
-  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: stretch; /* sidebar matches #content height */
 }
 
-/* --- Main Content --- */
+/* Main content */
 #content {
   flex: 1;
-  min-width: 0; /* allows flex item to shrink properly */
+  padding: 1rem;
   box-sizing: border-box;
+  overflow: auto;
+}
+
+/* Sidebar container */
+#sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  z-index: 999;
 }
 
 @media (max-width: 900px) {
   #main-container {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
     gap: var(--gap);
     padding: 1rem;
     position: relative; /* allows absolute positioning for sidebar */
@@ -38,4 +67,23 @@
   #overlay.active {
     display: block;
   }
+}
+
+/* Base header layout */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1002; /* keep it above the sidebar */
+}
+
+#header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  white-space: nowrap;
 }
