@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
   
     // Sidebar tag filtering
-  sidebarContainer.addEventListener('click', (e) => {
+  sidebar.addEventListener('click', (e) => {
     if (e.target.tagName === 'LI' && e.target.dataset.tags) {
       const tags = e.target.dataset.tags.split(',');
       const filtered = pages.filter(p => p.tags.some(t => tags.includes(t)));

@@ -7,6 +7,7 @@
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: auto; /* ✨ allow dynamic height */
+  width: auto; /* ✨ allow dynamic width */
 }
 
 .card:hover {
