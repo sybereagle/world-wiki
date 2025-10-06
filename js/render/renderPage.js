@@ -6,7 +6,7 @@ export function renderPage(page, container) {
 
   container.innerHTML = `
     <h2>${page.title}</h2>
-    <img src="${page.img}" alt="${page.title}" />
+    <img src="${page.img}" alt="${page.title}">
     <p>${page.desc}</p>
   `;
 }

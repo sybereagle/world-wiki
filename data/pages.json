@@ -1,16 +1,23 @@
 [
   {
-    "id": "page-1",
-    "title": "Placeholder Page 1",
-    "desc": "This is a placeholder description for page 1.",
-    "tags": ["lore", "geography"],
+    "id": "lore-1",
+    "title": "Ancient Mountains",
+    "desc": "A mysterious mountain range full of legends and hidden secrets.",
+    "tags": ["geography", "lore"],
     "img": "assets/images/placeholder.png"
   },
   {
-    "id": "page-2",
-    "title": "Placeholder Page 2",
-    "desc": "This is a placeholder description for page 2.",
-    "tags": ["history", "characters"],
+    "id": "history-1",
+    "title": "The Great War",
+    "desc": "A historical event that shaped the nations of this world.",
+    "tags": ["history", "war"],
+    "img": "assets/images/placeholder.png"
+  },
+  {
+    "id": "characters-1",
+    "title": "Fabled Hero",
+    "desc": "A legendary hero known across kingdoms.",
+    "tags": ["characters", "lore"],
     "img": "assets/images/placeholder.png"
   }
 ]
