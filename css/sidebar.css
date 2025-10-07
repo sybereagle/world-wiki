@@ -1,6 +1,6 @@
 /* Sidebar panel */
 #sidebar {
-  flex: 1; /* matches content height on desktop */
+  flex: 1;
   width: 260px;
   max-width: 260px;
   box-sizing: border-box;
@@ -10,12 +10,12 @@
   border-radius: var(--radius);
   overflow-y: auto;
   transition: transform 0.35s ease, opacity 0.35s ease, box-shadow 0.35s ease;
-  z-index: 1000; /* above overlay */
+  z-index: 1000;
 }
 
 /* Desktop sidebar collapsed */
 #sidebar.collapsed {
-  width: 60px;  /* small mini nav */
+  width: 60px;
   padding: 1rem 0.5rem;
 }
 
@@ -38,7 +38,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.3);
-  z-index: 999; /* behind sidebar */
+  z-index: 999;
 }
 
 #overlay.active {
@@ -49,7 +49,7 @@
 #sidebar-toggle {
   position: absolute;
   top: 0.75rem;
-  right: 1rem; /* default desktop / mobile collapsed position */
+  right: 1rem;
   z-index: 1001;
   background: var(--color-surface-alt);
   border: 1px solid rgba(0,0,0,0.15);
@@ -60,7 +60,6 @@
   transition: all 0.3s ease;
 }
 
-/* Toggle rotates and highlights when active */
 #sidebar-toggle.active {
   transform: rotate(90deg);
   background: rgba(0, 150, 250, 0.1);
@@ -69,7 +68,6 @@
 
 /* === MOBILE === */
 @media (max-width: 900px) {
-  /* Toggle in top-right header when sidebar closed */
   #sidebar-toggle {
     position: fixed;
     top: 1rem;
@@ -77,12 +75,10 @@
     z-index: 1001;
   }
 
-  /* Toggle moves left of sidebar when sidebar is open */
   #sidebar-toggle.active {
-    right: calc(260px + 1rem); /* just left of sidebar */
+    right: calc(260px + 1rem);
   }
 
-  /* Sidebar slides in from right */
   #sidebar {
     position: fixed;
     top: 0;
@@ -103,7 +99,7 @@
   }
 }
 
-/* === DESKTOP: docked right === */
+/* === DESKTOP === */
 @media (min-width: 901px) {
   #main-container {
     display: flex;
@@ -118,11 +114,42 @@
     position: relative;
     right: 0;
     transform: translateX(0);
+    display: block;
   }
 
   #sidebar.hidden {
-    transform: translateX(100%);
-    opacity: 0;
+    display: none;
+  }
+
+  /* Keyframes for sliding desktop sidebar */
+  @keyframes slideOutRight {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #sidebar.slide-out {
+    animation: slideOutRight 0.35s forwards;
+  }
+
+  #sidebar.slide-in {
+    animation: slideInRight 0.35s forwards;
   }
 
   #sidebar-toggle {
@@ -144,3 +171,4 @@
     transform: rotate(180deg);
   }
 }
+
