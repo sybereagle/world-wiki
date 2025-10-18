@@ -1,0 +1,38 @@
+[
+  {
+    "id": "geography-1",
+    "title": "Ancient Mountains",
+    "category": "Geography",
+    "desc": "A mysterious mountain range full of legends and hidden secrets.",
+    "tags": ["mountains", "lore"],
+    "img": "assets/images/placeholder.png",
+    "content": "<p>The Ancient Mountains stretch across the northern continent, harboring countless caves and hidden valleys...</p>"
+  },
+  {
+    "id": "history-1",
+    "title": "The Great War",
+    "category": "History",
+    "desc": "A historical event that shaped the nations of this world.",
+    "tags": ["war", "conflict"],
+    "img": "assets/images/placeholder.png",
+    "content": "<p>The Great War lasted for decades and involved all the major kingdoms. It reshaped borders and cultures...</p>"
+  },
+  {
+    "id": "characters-1",
+    "title": "Fabled Hero",
+    "category": "Characters",
+    "desc": "A legendary hero known across kingdoms.",
+    "tags": ["hero", "lore"],
+    "img": "assets/images/placeholder.png",
+    "content": "<p>The Fabled Hero is a figure of myths and songs, appearing in countless tales told by bards...</p>"
+  },
+  {
+    "id": "geography-2",
+    "title": "Sunken Valley",
+    "category": "Geography",
+    "desc": "A valley that disappeared beneath the waves centuries ago.",
+    "tags": ["valley", "mystery"],
+    "img": "assets/images/placeholder.png",
+    "content": "<p>The Sunken Valley was once a fertile land until the great flood submerged it entirely...</p>"
+  }
+]
