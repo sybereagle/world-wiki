@@ -1,0 +1,8 @@
+/* ===== Themes ===== */
+[data-theme="light"] {
+  --color-bg: #f5f6f8;
+  --color-text: #1a1a1a;
+  --color-surface: #ffffff;
+  --color-border: #ddd;
+}
+

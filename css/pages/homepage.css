@@ -1,0 +1,14 @@
+/* ===== Homepage ===== */
+.home-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.home-intro h1 {
+  color: var(--color-highlight);
+}
+
+.home-intro p {
+  color: var(--color-text-muted);
+}
+
