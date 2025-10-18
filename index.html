@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Wiki Demo</title>
+
+  <!-- Modular CSS root entry -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JS entry point -->
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>World Wiki</h1>
+    <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+  </header>
+
+  <!-- ===== MAIN CONTENT + SIDEBAR ===== -->
+  <div id="main-container">
+    <main id="content">
+      <!-- Back Home Button -->
+      <button id="back-home-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      <!-- SPA-rendered content goes here -->
+      <div id="page-content"></div>
+    </main>
+
+    <!-- Sidebar -->
+    <div id="sidebar-container">
+      <aside id="sidebar">
+        <!-- Search Field -->
+        <div id="sidebar-search">
+          <input id="searchBar" type="text" placeholder="Search..." aria-label="Search pages">
+        </div>
+
+        <!-- Sidebar links injected dynamically by JS -->
+        <nav id="sidebar-links"></nav>
+      </aside>
+
+      <!-- Overlay for mobile sidebar -->
+      <div id="overlay"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 World Wiki Demo</p>
+  </footer>
+
+</body>
+</html>
+
