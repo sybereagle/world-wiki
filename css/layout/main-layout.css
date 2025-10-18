@@ -34,18 +34,27 @@ main {
 }
 
 @media (max-width: 900px) {
-  /* Make the sidebar completely hidden offscreen */
-  #sidebar-container {
-    position: fixed; /* detach from layout flow */
-    top: 0;
-    right: -100%;    /* fully offscreen */
-    width: 300px;
-    height: 100vh;   /* full viewport height */
-    z-index: 1000;
-    transition: right 0.3s ease;
+  /* Main container just fills the viewport width */
+  #main-container {
+    flex-direction: column;
+    width: 100vw;  /* ensure it never exceeds viewport width */
+    overflow-x: hidden; /* prevent horizontal scroll */
   }
 
-  /* Slide in when active */
+  /* Sidebar overlays the content when opened */
+  #sidebar-container {
+    position: fixed;      /* removes from flow */
+    top: 0;
+    right: -100%;         /* start fully offscreen */
+    width: 80vw;          /* 80% of viewport width, responsive */
+    max-width: 300px;     /* cap on larger phones/tablets */
+    height: 100vh;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.3); /* subtle shadow */
+  }
+
+  /* Slide in when visible */
   #sidebar-container.visible {
     right: 0;
   }
@@ -62,10 +71,4 @@ main {
     background: rgba(0,0,0,0.5);
     z-index: 999;
   }
-
-  /* Adjust main content to fill the viewport */
-  #main-container {
-    flex-direction: column;
-  }
 }
-
