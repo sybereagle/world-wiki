@@ -33,7 +33,8 @@ world-wiki/
 │   │   ├── grid.css              # Grid & flexbox layout helpers
 │   │   ├── header.css            # Header/nav styles
 │   │   ├── footer.css            # Footer styles
-│   │   └── main-layout.css       # Global page layout containers
+│   │   ├── main-layout.css       # Global page layout containers
+│   │   └── sidebar-layout.css    # Global sidebar layout
 │   ├── components/
 │   │   ├── cards.css             # Wiki article cards
 │   │   ├── buttons.css           # Reusable buttons (incl. back-home)
