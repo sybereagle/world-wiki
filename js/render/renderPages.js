@@ -9,7 +9,7 @@ import { helpers } from "../utils/formatUtils.js";
 export function renderPage(container, page) {
   container.innerHTML = "";
 
-  var articleDiv = createElement("div", { classes: ["article", helpers.bg.surface, helpers.p.md] });
+  var articleDiv = createElement("div", { classes: ["article", helpers.bg.surface, helpers.padding.md] });
   var title = createElement("h1", { text: page.title });
   var desc = createElement("p", { text: page.desc });
 

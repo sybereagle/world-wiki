@@ -23,13 +23,16 @@ export const helpers = {
     mbSm: "mb-sm",
     mbMd: "mb-md",
     mbLg: "mb-lg",
-    mbXl: "mb-xl",
-    p0: "p-0",
-    pXs: "p-xs",
-    pSm: "p-sm",
-    pMd: "p-md",
-    pLg: "p-lg",
-    pXl: "p-xl",
+    mbXl: "mb-xl"
+    },
+    
+    padding: {
+        "0": "p-0",
+        "xs": "p-xs",
+        "sm": "p-sm",
+        "md": "p-md",
+        "lg": "p-lg",
+        "xl": "p-xl",
   },
 
   /* Width / Height */
