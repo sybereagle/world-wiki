@@ -1,8 +1,48 @@
 /* ===== Themes ===== */
+
+/* ----- Dark Theme ----- */
+[data-theme="dark"] {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+
+  --color-bg: #0e0f11;
+  --color-bg-alt: #17191d;
+  --color-surface: #22252b;
+  --color-accent: #6ab3f7;
+  --color-highlight: #cfa86e;
+  --color-text: #e6e6e6;
+  --color-text-muted: #a0a0a0;
+  --color-border: #30343a;
+}
+
+[data-theme="dark"] a {
+  color: var(--color-accent);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--color-highlight);
+}
+
+/* ----- Light Theme ----- */
 [data-theme="light"] {
-  --color-bg: #f5f6f8;
-  --color-text: #1a1a1a;
+  background-color: #f5f5f5;
+  color: #111;
+
+  --color-bg: #f9f9fa;
+  --color-bg-alt: #e9ebee;
   --color-surface: #ffffff;
-  --color-border: #ddd;
+  --color-accent: #0077cc;
+  --color-highlight: #005fa3;
+  --color-text: #111;
+  --color-text-muted: #555;
+  --color-border: #ccc;
+}
+
+[data-theme="light"] a {
+  color: var(--color-accent);
+}
+
+[data-theme="light"] a:hover {
+  color: var(--color-highlight);
 }
 

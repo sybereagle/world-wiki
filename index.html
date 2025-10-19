@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>World Wiki Demo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Wiki</title>
 
-  <!-- Modular CSS root entry -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Modular CSS root entry -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- JS entry point -->
-  <script type="module" src="js/main.js" defer></script>
-</head>
-<body>
+    <!-- JS entry point -->
+    <script type="module" src="js/main.js" defer></script>
+  </head>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <h1>World Wiki</h1>
-    <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-  </header>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="container header-container">
+        <h1 class="logo">World Wiki</h1>
+        <button id="sidebar-toggle" class="button button-secondary" aria-label="Toggle sidebar">☰</button>
+      </div>
+    </header>
 
-  <!-- ===== MAIN CONTENT + SIDEBAR ===== -->
-  <div id="main-container">
-    <main id="content">
-      <!-- Back Home Button -->
-      <button id="back-home-button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="back-icon">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </button>
+    <!-- ===== MAIN CONTENT + SIDEBAR ===== -->
+    <div id="main-container">
+      <main id="content">
+        <div class="container">
+          <!-- Back Home Button -->
+          <button id="back-home-button" class="button button-secondary" aria-label="Back to homepage">
+            <svg
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="back-icon"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
 
-      <!-- SPA-rendered content goes here -->
-      <div id="page-content"></div>
-    </main>
-
-    <!-- Sidebar -->
-    <div id="sidebar-container">
-      <aside id="sidebar">
-        <!-- Search Field -->
-        <div id="sidebar-search">
-          <input id="searchBar" type="text" placeholder="Search..." aria-label="Search pages">
+          <!-- SPA-rendered content goes here -->
+          <div id="page-content"></div>
         </div>
+      </main>
 
-        <!-- Sidebar links injected dynamically by JS -->
-        <nav id="sidebar-links"></nav>
-      </aside>
+      <!-- Sidebar -->
+      <div id="sidebar-container">
+        <aside id="sidebar">
+          <!-- Search Field -->
+          <div id="sidebar-search">
+            <input
+              id="searchBar"
+              type="text"
+              placeholder="Search..."
+              aria-label="Search pages"
+            />
+          </div>
 
-      <!-- Overlay for mobile sidebar -->
-      <div id="overlay"></div>
+          <!-- Sidebar links injected dynamically by JS -->
+          <nav id="sidebar-links"></nav>
+        </aside>
+
+        <!-- Overlay for mobile sidebar -->
+        <div id="overlay"></div>
+      </div>
     </div>
-  </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>© 2025 World Wiki Demo</p>
-  </footer>
-
-</body>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container footer-container">
+        <p>© 2025 World Wiki</p>
+      </div>
+    </footer>
+  </body>
 </html>
-

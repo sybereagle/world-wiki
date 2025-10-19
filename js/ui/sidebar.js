@@ -1,79 +1,38 @@
-// ./ui/sidebar.js
+/** Handles sidebar toggle, overlay, and mobile interactions **/
+import { select, addClass, removeClass, toggleClassPair, setText } from "../utils/domUtils.js";
+
+/** Initialize sidebar functionality **/
 export function initSidebar() {
-  // Grab essential elements
-  const toggleBtn = document.getElementById('sidebar-toggle');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
+  var sidebar = select("#sidebar");
+  var overlay = select("#overlay");
+  var toggleButton = select("#sidebar-toggle");
 
-  // Exit early if elements are missing
-  if (!toggleBtn || !sidebar || !overlay) {
-    console.error('Sidebar init failed: missing required elements.');
-    return;
-  }
+  if (!sidebar || !overlay || !toggleButton) return;
 
-  // ----- Mobile functions -----
-  function openMobileSidebar() {
-    sidebar.classList.add('visible');
-    overlay.classList.add('active');
-    toggleBtn.classList.add('active');
-    toggleBtn.textContent = '✕';
-  }
+  // Sidebar is visible by default
+  addClass(sidebar, 'visible');
+  addClass(overlay, 'collapsed');
 
-  function closeMobileSidebar() {
-    sidebar.classList.remove('visible');
-    overlay.classList.remove('active');
-    toggleBtn.classList.remove('active');
-    toggleBtn.textContent = '☰';
-  }
-
-  // ----- Desktop toggle -----
-  function toggleDesktopSidebar() {
-    const isHidden = sidebar.classList.contains('hidden');
-
-    if (isHidden) {
-      sidebar.classList.remove('hidden');
-      sidebar.classList.add('visible');
-      toggleBtn.classList.add('desktop-active');
+  // Toggle sidebar on button click
+  toggleButton.addEventListener("click", function() {
+    if (sidebar.classList.contains("collapsed")) {
+      toggleClassPair(sidebar, 'collapsed', 'visible');
+      toggleClassPair(overlay, 'visible', 'collapsed');
+      setText(toggleButton, '☰');
     } else {
-      sidebar.classList.remove('visible');
-      sidebar.classList.add('hidden');
-      toggleBtn.classList.remove('desktop-active');
+      toggleClassPair(sidebar, 'visible', 'collapsed');
+      toggleClassPair(overlay, 'collapsed', 'visible');
+      setText(toggleButton, '×');
+      // Wait for CSS transition to complete (300ms) before hiding
+      setTimeout(function() {
+        sidebar.style.display = "none";
+      }, 300);
     }
-  }
-
-  // ----- Main toggle handler -----
-  function handleToggle() {
-    if (window.innerWidth <= 900) {
-      sidebar.classList.contains('visible') ? closeMobileSidebar() : openMobileSidebar();
-    } else {
-      toggleDesktopSidebar();
-    }
-  }
-
-  // ----- Event listeners -----
-  toggleBtn.addEventListener('click', handleToggle);
-
-  overlay.addEventListener('click', () => {
-    if (window.innerWidth <= 900) closeMobileSidebar();
   });
 
-  sidebar.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A' && window.innerWidth <= 900) closeMobileSidebar();
-  });
-
-  // ----- Reset sidebar on window resize -----
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
-      // Ensure desktop state
-      sidebar.classList.remove('hidden');
-      sidebar.classList.add('visible');
-      overlay.classList.remove('active');
-      toggleBtn.classList.remove('active');
-      toggleBtn.textContent = '☰';
-    } else {
-      // Mobile: hide overlay
-      overlay.classList.remove('active');
-    }
+  // Clicking overlay expands sidebar
+  overlay.addEventListener("click", function() {
+    removeClass(sidebar, "collapsed");
+    removeClass(overlay, "visible");
   });
 }
-

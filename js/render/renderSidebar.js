@@ -1,20 +1,26 @@
-import { createElement, clearElement } from '../utils/domUtils.js';
+/** Generates sidebar links dynamically **/
+import { createElement, append } from "../utils/domUtils.js";
 
-export function renderSidebarLinks(pages, containerId) {
-  containerId = containerId || 'sidebar';
-  var container = document.getElementById(containerId);
-  if (!container) return;
-
-  var oldNav = container.querySelector('nav');
-  if (oldNav) clearElement(oldNav);
-
-  var nav = createElement('nav', { className: 'sidebar-links' });
+/** Render sidebar links **/
+/** There are two parameters: sidebarContainer and pages **/
+/** sidebarContainer: an HTML element **/
+/** pages: an array of page objects {title, id} **/
+export function renderSidebar(sidebarContainer, pages) {
+  sidebarContainer.innerHTML = "";
 
   for (var i = 0; i < pages.length; i++) {
     var page = pages[i];
-    var link = createElement('a', { href: '#' + page.id, text: page.title });
-    nav.appendChild(link);
-  }
+    var link = createElement("a", { text: page.title, attrs: { href: "#" } });
 
-  container.appendChild(nav);
+    (function(idCopy, linkCopy) {
+      linkCopy.addEventListener("click", function(e) {
+        e.preventDefault();
+        var event = new CustomEvent("navigate", { detail: { pageId: idCopy } });
+        document.dispatchEvent(event);
+      });
+    })(page.id, link);
+
+    append(sidebarContainer, link);
+  }
 }
+

@@ -1,22 +1,22 @@
 /* ===== Typography ===== */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--color-highlight);
+  font-weight: 600;
   line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
 }
 
 p {
-  margin-bottom: 1rem;
-  color: var(--color-text);
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-md);
 }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color var(--transition);
-}
+h1 { font-size: var(--font-size-xxl); }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-lg); }
 
 a:hover {
-  color: var(--color-highlight);
+  color: var(--color-accent-hover);
+  transition: color var(--transition-fast);
 }
-

@@ -1,29 +1,41 @@
-/* Root stylesheet — import order matters! */
+/* ==================================================
+   Root Stylesheet for World Wiki SPA
+   ================================================== */
 
-/* ===== Base Setup ===== */
-@import url('./base/reset.css');
-@import url('./base/variables.css');
-@import url('./base/typography.css');
+/* ------------------------
+   Base Styles
+   ------------------------ */
+@import "./base/reset.css";           /* Normalize browser defaults */
+@import "./base/variables.css";       /* CSS variables: colors, spacing, fonts */
+@import "./base/typography.css";      /* Typography for headings, body, etc. */
 
-/* ===== Layout ===== */
-@import url('./layout/grid.css');
-@import url('./layout/header.css');
-@import url('./layout/footer.css');
-@import url('./layout/main-layout.css');
+/* ------------------------
+   Layout Styles
+   ------------------------ */
+@import "./layout/grid.css";           /* Grid & flexbox helpers */
+@import "./layout/header.css";         /* Header layout & styling */
+@import "./layout/footer.css";         /* Footer layout & styling */
+@import "./layout/sidebar-layout.css"; /* Sidebar layout and overlay */
+@import "./layout/main-layout.css";    /* Main content layout and spacing */
 
-/* ===== Components ===== */
-@import url('./components/cards.css');
-@import url('./components/buttons.css');
-@import url('./components/modals.css');
-@import url('./components/loader.css');
-@import url('./components/tooltips.css');
+/* ------------------------
+   Components
+   ------------------------ */
+@import "./components/cards.css";      /* Wiki article cards */
+@import "./components/buttons.css";    /* Reusable buttons */
+@import "./components/modals.css";     /* Modals & popups */
+@import "./components/loader.css";     /* Loading animations */
+@import "./components/tooltips.css";   /* Tooltip interactions */
 
-/* ===== Pages ===== */
-@import url('./pages/homepage.css');
-@import url('./pages/article.css');
+/* ------------------------
+   Pages
+   ------------------------ */
+@import "./pages/homepage.css";        /* Homepage-specific styles */
+@import "./pages/article.css";         /* Article page-specific styles */
 
-/* ===== Utilities ===== */
-@import url('./utils/animations.css');
-@import url('./utils/themes.css');
-@import url('./utils/helpers.css');
-
+/* ------------------------
+   Utilities
+   ------------------------ */
+@import "./utils/animations.css";      /* Keyframes & transitions */
+@import "./utils/themes.css";          /* Light/dark/world theme variations */
+@import "./utils/helpers.css";         /* Utility classes: spacing, flex, z-index, visibility */

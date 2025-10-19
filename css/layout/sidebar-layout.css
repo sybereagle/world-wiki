@@ -1,0 +1,107 @@
+/* ==========================
+   Sidebar Layout & Styling
+   ========================== */
+
+/* Sidebar: right-aligned, dynamic height */
+#sidebar {
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  right: 0;                        /* attach to right side */
+  width: 300px;
+  height: calc(100vh - var(--footer-height));
+  background-color: var(--color-surface-alt); /* matches header/footer */
+  box-shadow: var(--shadow-medium);
+  transform: translateX(100%);     /* initially off-screen (collapsed by default) */
+  transition: transform 0.3s ease;
+  z-index: 50;
+  overflow-y: auto;
+  flex-direction: column;
+  padding: var(--space-md);
+}
+
+/* Visible state: slide in from right */
+#sidebar.visible {
+  transform: translateX(0);        /* fully visible on screen */
+  display: flex;
+}
+
+/* Collapsed state: slide off right */
+#sidebar.collapsed {
+  transform: translateX(100%);     /* off-screen to the right */
+}
+
+/* Sidebar search container */
+#sidebar-search {
+  margin-bottom: var(--space-lg);
+}
+
+#sidebar-search input {
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-md);
+  transition: border-color var(--transition-fast);
+}
+
+#sidebar-search input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Sidebar links */
+#sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+#sidebar-links a {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  transition: background-color var(--transition);
+}
+
+#sidebar-links a:hover {
+  background-color: var(--color-bg-alt);
+  color: var(--color-accent);
+}
+
+/* Overlay: mobile only */
+#overlay {
+  display: none; /* hidden by default on desktop */
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    width: 80vw;
+    order: -1;
+  }
+
+  #overlay {
+    display: block;
+    position: fixed;
+    top: var(--header-height);
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 40;
+  }
+
+  /* Overlay visible state */
+  #overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+

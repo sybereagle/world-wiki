@@ -1,24 +1,36 @@
-export function initBackButton() {
-  var backBtn = document.getElementById('back-home-button');
-  var content = document.getElementById('content');
+import { select, addClass, removeClass } from "../utils/domUtils.js";
 
-  if (!backBtn || !content) return;
+/** Initialize back home button **/
+// @param {Function} onBack - callback when the button is clicked
+// @param {Function} isHomepage - callback that returns true if the current view is homepage
+// @returns {Object} - controller with updateVisibility method
+export function initBackButton(onBack, isHomepage) {
+  var backButton = select("#back-home-button");
 
-  function show() {
-    backBtn.classList.remove('hidden');
+  if (!backButton) return null;
+
+  function updateVisibility() {
+    if (typeof isHomepage !== "function") return;
+
+    if (isHomepage()) {
+      addClass(backButton, "hidden");
+      removeClass(backButton, "visible");
+    } else {
+      removeClass(backButton, "hidden");
+      addClass(backButton, "visible");
+    }
   }
 
-  function hide() {
-    backBtn.classList.add('hidden');
-  }
-
-  backBtn.addEventListener('click', function () {
-    window.location.hash = '';
-    hide();
+  backButton.addEventListener("click", function() {
+    if (typeof onBack === "function") {
+      onBack();
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  window.addEventListener('hashchange', function () {
-    if (window.location.hash) show();
-    else hide();
-  });
+  updateVisibility();
+
+  return {
+    updateVisibility: updateVisibility
+  };
 }

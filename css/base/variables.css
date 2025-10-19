@@ -1,26 +1,57 @@
 /* ===== Global Variables ===== */
-:root {
-  /* — Color Palette — (epic fantasy grounded in realistic science) */
-  --color-bg: #0e0f11;
-  --color-bg-alt: #17191d;
-  --color-surface: #22252b;
-  --color-accent: #6ab3f7;   /* Aether blue */
-  --color-highlight: #cfa86e; /* Sun-tempered gold */
-  --color-text: #e6e6e6;
-  --color-text-muted: #a0a0a0;
-  --color-border: #30343a;
 
+:root {
+  /* --- Core Backgrounds --- */
+  --color-bg: #0e0f11;            /* Deep space / night sky */
+  --color-bg-alt: #17191d;        /* Slightly lighter background */
+  --color-surface: #22252b;       /* Panels, cards, modals */
+  --color-surface-alt: #2a2e34;   /* Secondary surface variation */
+  --color-border: #30343a;        /* Subtle outline & separators */
+
+  /* --- Text Colors --- */
+  --color-text: #e6e6e6;          /* Primary readable text */
+  --color-text-muted: #a0a0a0;    /* Secondary metadata, timestamps */
+  --color-text-invert: #0e0f11;   /* For use on bright highlights */
+
+  /* --- Accents --- */
+  --color-accent: #6ab3f7;        /* Science / sky tone */
+  --color-accent-hover: #82c2ff;  /* Hover / interaction state */
+  --color-highlight: #cfa86e;     /* Fantasy gold / lore tone */
+  --color-highlight-hover: #deb980;
+  --color-accent-alt: #8e6de8;    /* Optional mystical purple accent */
+
+  /* --- Shadows --- */
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-strong: 0 6px 20px rgba(0, 0, 0, 0.3);
+  
   /* — Typography — */
   --font-body: 'Inter', 'Segoe UI', sans-serif;
   --font-heading: 'Cinzel', 'Garamond', serif;
 
   /* — Sizing — */
-  --radius: 12px;
-  --padding: 1rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  --space-none: 0rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+
+  --header-height: 60px; /* Header heights */
+  --footer-height: 40px; /* Footer heights */
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
   --transition: 0.3s ease;
-
-  /* — Shadows — */
-  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.2);
-  --shadow-strong: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-

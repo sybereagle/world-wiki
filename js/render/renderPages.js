@@ -1,15 +1,24 @@
-import { createElement, clearElement } from '../utils/domUtils.js';
+/** Renders an individual wiki article page **/
+import { createElement, append } from "../utils/domUtils.js";
+import { helpers } from "../utils/formatUtils.js";
 
-export function renderPage(page, container) {
-  if (!container || !page) return;
+/** Render full article content **/
+/** There are two parameters: container and pageData **/
+/** Container Parameter: an HTML element **/
+/** pageData Parameter: an object {title, content, img} **/
+export function renderPage(container, page) {
+  container.innerHTML = "";
 
-  clearElement(container);
+  var articleDiv = createElement("div", { classes: ["article", helpers.bg.surface, helpers.p.md] });
+  var title = createElement("h1", { text: page.title });
+  var desc = createElement("p", { text: page.desc });
 
-  var article = createElement('article', { className: 'wiki-page' }, [
-    createElement('h2', { text: page.title }),
-    createElement('img', { src: page.img, alt: page.title }),
-    createElement('div', { html: page.content })
-  ]);
+  append(articleDiv, title, desc);
 
-  container.appendChild(article);
+  if (page.content) {
+    var contentDiv = createElement("div", { html: page.content });
+    append(articleDiv, contentDiv);
+  }
+
+  append(container, articleDiv);
 }

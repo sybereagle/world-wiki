@@ -1,15 +1,40 @@
-/* ===== Header ===== */
+/* Header styles */
 header {
-  background: var(--color-surface);
-  box-shadow: var(--shadow-soft);
-  padding: 0.75rem 1.5rem;
+  position: fixed;               
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);  
+  background-color: var(--color-surface-alt);
+  display: flex;
+  align-items: center;           /* vertically center children */
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  box-shadow: var(--shadow-medium);
+  z-index: 100;                  
+}
+
+/* Header container for inner content */
+.header-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;           /* vertically center <h1> and <button> */
+  width: 100%;
 }
 
-header h1 {
-  font-size: 1.5rem;
-  color: var(--color-highlight);
+/* Logo */
+.logo {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  margin: var(--space-none);
 }
 
+/* Toggle button */
+#sidebar-toggle {
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;           /* vertically center icon/text inside button */
+  padding: var(--space-sm);
+}

@@ -1,14 +1,97 @@
-/* ===== Animations ===== */
+/* ===== Animations / Transitions ===== */
+
+/* --- Fade Effects --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* --- Slide Transitions --- */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+/* --- Rotation / Loaders --- */
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
 
+/* --- Utility Classes --- */
 .fade-in {
-  animation: fadeIn 0.4s ease forwards;
+  animation: fadeIn var(--transition-medium) forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.fade-out {
+  animation: fadeOut var(--transition-medium) forwards;
 }
 
+.slide-in-left {
+  animation: slideInLeft var(--transition-medium) forwards;
+}
+
+.slide-out-left {
+  animation: slideOutLeft var(--transition-medium) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight var(--transition-medium) forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight var(--transition-medium) forwards;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+/* --- Interactive / Hover Effects --- */
+.hover-lift {
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.fade-hover {
+  transition: opacity var(--transition-medium);
+}
+.fade-hover:hover {
+  opacity: 0.85;
+}
+
+.scale-press {
+  transition: transform var(--transition-fast);
+}
+.scale-press:active {
+  transform: scale(0.95);
+}
+
+.rotate-hover {
+  transition: transform var(--transition-medium);
+}
+.rotate-hover:hover {
+  transform: rotate(5deg);
+}

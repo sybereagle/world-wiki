@@ -1,22 +1,17 @@
-import { createElement } from '../utils/domUtils.js';
+/** Initializes the search input in the sidebar **/
+import { select } from "../utils/domUtils.js";
+import { renderSearch } from "./renderSearch.js";
 
-export function renderSearchField(containerId) {
-  containerId = containerId || 'sidebar';
-  var container = document.getElementById(containerId);
-  if (!container) return null;
+/** Initialize search bar **/
+/** There is only one parameter: pages, which is an array **/
+export function renderSearchField(pages) {
+  var searchBar = select("#searchBar");
 
-  var oldSearch = container.querySelector('#sidebar-search');
-  if (oldSearch) oldSearch.remove();
+  if (!searchBar) return;
 
-  var input = createElement('input', {
-    id: 'searchBar',
-    type: 'text',
-    placeholder: 'Search...',
-    'aria-label': 'Search pages'
+  searchBar.addEventListener("input", function() {
+    var term = searchBar.value;
+    var contentContainer = select("#page-content");
+    renderSearch(contentContainer, pages, term);
   });
-
-  var wrapper = createElement('div', { id: 'sidebar-search' }, [input]);
-  container.prepend(wrapper);
-
-  return input;
 }

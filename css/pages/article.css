@@ -1,17 +1,18 @@
 /* ===== Article Page ===== */
-.article {
-  max-width: 800px;
-  margin: 0 auto;
+#page-content.article {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
 }
 
-.article h2 {
-  color: var(--color-accent);
-  margin-top: 1.5rem;
+#page-content.article h1 {
+  color: var(--color-highlight);
+  margin-bottom: var(--space-md);
 }
 
-.article img {
-  width: 100%;
-  border-radius: var(--radius);
-  margin: 1rem 0;
+#page-content.article p {
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
 }
 
